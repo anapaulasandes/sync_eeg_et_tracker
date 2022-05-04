@@ -33,7 +33,6 @@ time_start=tic;
 while  1
     %scan data from buffer and parse the xml format
     dataReceived = fscanf(session1_client);
-    fprint(size(dataReceived))
     split = strsplit(dataReceived,'"');
     current_user_data = split{end-1};
     if strcmp(current_user_data,'CLIENT2_READY')
