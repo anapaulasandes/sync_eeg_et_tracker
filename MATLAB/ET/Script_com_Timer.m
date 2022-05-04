@@ -21,17 +21,13 @@ ExecuteRecordGP3Data(session1_client,outputFileName);
 
 
 %% Experiment (stimuli presentation) goes here
-
-for n = 1:100
-    % Adicionar a coluna do tempo em minutos 
-    % time_now = [minute(datetime('now')) + " " + second(datetime('now'))]
-    % SendMsgToGP3(session1_client, ['time ' num2str([minute(datetime('now')) + " " + second(datetime('now'))])]); %send msg trigger for start of the trial
-    SendMsgToGP3(session1_client,['time ' num2str([hour(datetime('now')) + ":" + minute(datetime('now')) + ":" + second(datetime('now')) + " " +  n])]);
-    % pause(1);
+for trial_num=1:5
+    % Start of new trial here
+    SendMsgToGP3(session1_client,['trial_start' num2str(trial_num)]); %send msg trigger for start of the trial
+    pause(2);
     % Present a stimuli here
-    % SendMsgToGP3(session1_client,['stimuli' num2str(trial_num)]); %send msg trigger for onset of new stimuli
-    % pause(2); 
-    pause(1)
+    SendMsgToGP3(session1_client,['stimuli' num2str(trial_num)]); %send msg trigger for onset of new stimuli
+    pause(2);  
 end
 
 
