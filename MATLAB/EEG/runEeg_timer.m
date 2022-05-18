@@ -131,6 +131,8 @@ while (i < 1000) %46080
             data.seconds_loop = z;
             % close
             main_data = [main_data;data]
+            
+            pause(0.1)
         end
     end
 end

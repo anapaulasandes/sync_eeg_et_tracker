@@ -76,7 +76,7 @@ fprintf( 'Connected.  Reading Packets...\n' );
 j = 0;
 i = 0;
 z = 0;
-while (i < 1000) %46080
+while (i < 5000) %46080
     if (calllib('thinkgear','TG_ReadPackets',connectionId1,1) == 1) 
         
         if (calllib('thinkgear','TG_GetValueStatus',connectionId1,TG_DATA_RAW) ~= 0) 
